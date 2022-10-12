@@ -1,0 +1,101 @@
+<form [formGroup]="patientInfoForm" (ngSubmit)="onSubmit()">
+<h2>Patient Information</h2>
+
+<p> <i>Please fill out this form to the best of your ability and submit it to 
+    save time on the day of your appointment. If you have any questions please 
+    reach out to the office directly so that your questions can be answered.</i></p>
+<br>
+
+<h4>Patient Information</h4>
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+
+    <label for="dob">Date of Birth: </label>
+    <input id="dob" type="text" formControlName="dob">
+
+    <label for="phone-number">Phone Number: </label>
+    <input id="phone-number" type="text" formControlName="phoneNumber">
+
+    <label for="marital-status">Marital Status: </label>
+    <select id="marital-status" type="text" formControlName="maritalStatus">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="seperated">Seperated</option>
+              </select>
+
+    <div formGroupName="address">
+        <h4>Address</h4>
+      
+        <label for="street">Street: </label>
+        <input id="street" type="text" formControlName="street">
+      
+        <label for="city">City: </label>
+        <input id="city" type="text" formControlName="city">
+      
+        <label for="state">State: </label>
+        <input id="state" type="text" formControlName="state">
+      
+        <label for="zip">Zip Code: </label>
+        <input id="zip" type="text" formControlName="zip">
+      </div>
+
+      <div formGroupName="emergencyContact">
+        <h4>Emergency Contact</h4>
+      
+        <p><i>Please fill out your emergency contact's information below.</i></p>
+        <br>
+
+        <label for="firstName">First Name: </label>
+        <input id="firstName" type="text" formControlName="firstName">
+      
+        <label for="last-name">Last Name: </label>
+        <input id="last-name" type="text" formControlName="lastName">
+      
+        <label for="phone-number">Phone Number: </label>
+        <input id="phone-number" type="text" formControlName="phoneNumber">
+      
+        <label for="relationship">Relationship to Patient: </label>
+        <select id="relationship" type="text" formControlName="relationship">
+                <option value="self">Parent</option>
+                <option value="spouse">Spouse</option>
+                <option value="child">Child</option>
+                <option value="other">Other</option>
+              </select>
+        
+      </div>
+
+      <div formGroupName="insurance">
+        <h4>Insurance</h4>
+      
+        <p><i>Please fill out your insurance information. <b>You will need to bring 
+            the physical card to the office the day of your appointment of provide
+            a copy of the card for your in office file.</b> 
+        </i></p>
+        <br>
+        <label for="primary-insurance">Primary Insurance: </label>
+        <input id="primary-insurance" type="text" formControlName="primaryInsurance">
+      
+        <label for="group-number">Group Number: </label>
+        <input id="group-number" type="text" formControlName="groupNumber">
+      
+        <label for="id-number">ID Number: </label>
+        <input id="id-number" type="text" formControlName="idNumber">
+      
+        <label for="social-security">Social Security #: </label>
+        <input id="social-security" type="text" formControlName="socialSecurityNumber">
+
+        <label for="relationship">Relationship to Patient: </label>
+        <select id="relationship" type="text" formControlName="relationship">
+                <option value="self">Self</option>
+                <option value="spouse">Spouse</option>
+                <option value="parent">Parent</option>
+              </select>
+        
+      </div>
+
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!patientInfoForm.valid">Submit</button>
+</form>
