@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sickness-disease-info',
@@ -11,5 +12,16 @@ export class SicknessDiseaseInfoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  SicknessDiseaseInfoForm= new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    dob: new FormControl(''),
+  });
+  Conditions = new FormGroup({
+    Asthma: new FormControl(''),
+    Migrane: new FormControl(''),
+    Pregnancy: new FormControl(''),
+    HeartDisease: new FormControl(''),
+    BloodPressure: new FormControl(''),
+  })
 }
